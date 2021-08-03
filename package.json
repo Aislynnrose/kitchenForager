@@ -20,6 +20,8 @@
   "homepage": "https://github.com/JamesO1231/kitchenForager#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
+    "env": "0.0.2",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.2",
     "mysql2": "^2.2.5",
