@@ -29,22 +29,7 @@ router.get('/register', (req, res) => {
 });
 
 router.get('/personalHomepage', withAuth, async (req, res) => {
-    try {
-        const userData = await User.findAll({
-            attributes: { exclude: ['password'] },
-            order: [['name', 'ASC']],
-        });
-
-        const users = userData.map((project) => project.get({ plain: true }));
-
-        res.render('personalHomepage', {
-            users,
-
-            logged_in: req.session.logged_in,
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
+        res.render('personalHomepage')
 });
 
 module.exports = router;
