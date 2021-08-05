@@ -16,7 +16,7 @@ const seedDatabase = async () => {
   });
   await Ingredients.bulkCreate(ingredientsData);
   await Food.bulkCreate(favFoodsData);
-
+  
   process.exit(0);
 };
 

@@ -36,20 +36,21 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [8],
+                len: [3, 20],
             },
         },
     },
     {
         hooks: {
             beforeCreate: async (newUserData) => {
-                newUserData.password = await bcrypt.hash(newUserData.password, 10);
-                return newUserData;
-            },
-            beforeCreate: async (newUserData) => {
-                // In this case, we are taking the user's email address, and making all letters lower case before adding it to the database.
-                newUserData.email = await newUserData.email.toLowerCase();
-                return newUserData;
+                try {
+                    const salt = await bcrypt.genSalt(10);
+                    newUserData.password = await bcrypt.hash(newUserData.password, salt);
+                    newUserData.email = await newUserData.email.toLowerCase();
+                    return newUserData;
+                } catch (err) {
+                    ; return err;
+                }
             },
             beforeUpdate: async (updatedUserData) => {
                 updatedUserData.email = await updatedUserData.email.toLowerCase();

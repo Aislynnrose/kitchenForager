@@ -7,17 +7,17 @@ router.post('/login', async (req, res) => {
 
         if (!userData) {
             res
-                .status(400)
-                .json({ message: 'Incorrect email or password, please try again' });
+                .status(400)                
+                .json({ message: 'Incorrect email , please try again' });
             return;
         }
 
-        const validPassword = await userData.checkPassword(req.body.password);
+        const validPassword = /* req.body.password */ await userData.checkPassword(req.body.password);
 
         if (!validPassword) {
             res
                 .status(400)
-                .json({ message: 'Incorrect email or password, please try again' });
+                .json({ message: 'Incorrect password, please try again' });
             return;
         }
 
