@@ -1,0 +1,22 @@
+[
+  {
+    "food_name": "enchiladas",
+    "description": "delicious"
+  },
+  {
+    "food_name": "tacos",
+    "description": "delicious"
+  },
+  {
+    "food_name": "pizza",
+    "description": "delicious"
+  },
+  {
+    "food_name": "cheeseburger",
+    "description": "delicious"
+  },
+  {
+    "food_name": "spaghetti",
+    "description": "noodly bois"
+  }
+]
