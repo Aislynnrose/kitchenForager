@@ -3,13 +3,13 @@ const Food = require('./Food');
 const Ingredients = require('./Ingredients');
 
 Ingredients.belongsTo(Food, {
-    foreignKey: 'food_id',
-    onDelete: 'CASCADE'
+  foreignKey: 'food_id',
+  onDelete: 'CASCADE'
 });
 
 Food.hasMany(Ingredients, {
-    foreignKey: 'food_id'
-  });
+  foreignKey: 'food_id'
+});
 
 
-module.exports = { User, Food, Ingredients};
+module.exports = { User, Food, Ingredients };
