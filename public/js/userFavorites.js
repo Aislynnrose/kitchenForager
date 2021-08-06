@@ -1,7 +1,7 @@
 async function newFormHandler(event) {
     event.preventDefault();
 
-    const response = await fetch(`/api/favoriteRoutes`, {
+    const response = await fetch(`/api/userFavoriteRoutes`, {
       method: 'GET',
       body: JSON.stringify({
         query,
@@ -24,3 +24,5 @@ async function newFormHandler(event) {
 }
 
 document.querySelector('').addEventListener('submit', newFormHandler);
+
+// install node fetch to use fetch on backend
