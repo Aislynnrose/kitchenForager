@@ -52,9 +52,8 @@ User.init(
                     ; return err;
                 }
             },
-            beforeUpdate: async (updatedUserData) => {
-                updatedUserData.email = await updatedUserData.email.toLowerCase();
-                return updatedUserData;
+            beforeUpdate: (updatedUserData) => {
+                return updatedUserData.email.toLowerCase();
             },
         },
         sequelize,

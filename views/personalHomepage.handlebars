@@ -1,15 +1,31 @@
 <nav class="navbar navbar-dark bg-dark">
   <form class="container-fluid justify-content-end">
-    <button class="btn btn-outline-success me-2" type="button">Home</button>
-    <button class="btn btn-outline-primary me-2" type="button">Logout</button>
-    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-    <button class="btn btn-outline-success" type="submit">Search Recipe</button>
+    <button class="btn btn-outline-primary me-2" id="logout" type="button">Logout</button>
   </form>
 </nav>
 <div class="container justify-content-center">
   <h1 class="text-center about">Welcome to your Kitchen Forager!</h1>
-  <p class="text-center">Your Favorites:</p>
-  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  </div>
+<div class="container justify-content-center">
+  <h1 class="text-center about">Let's Get Cooking!</h1>
+  <p class="text-center">Below you can search for recipes by ingredients you
+    have in your kitchen. Or for a spicific dish you have in mind that you would
+    like to try and cook.
+  </p>
+</div>
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Search by Ingredient List" aria-label="Ingredient List"
+    aria-describedby="button-addon2" />
+  <button class="btn btn-outline-success me-2" type="button" id="button-addon2">Get Cooking</button>
+</div>
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Search For Recipe" aria-label="Search For Recipe"
+    aria-describedby="button-addon2" />
+  <button class="btn btn-outline-success me-2" type="button" id="button-addon2">Get Cooking</button>
+</div>
+<div class="container justify-content-center">
+<p class="text-center">Your Favorites:</p>
+  {{!-- <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
         aria-current="true" aria-label="Slide 1"></button>
@@ -22,7 +38,7 @@
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
         aria-label="Slide 5"></button>
     </div>
-  </div>
+  </div> --}}
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="..." class="d-block w-100" alt="Kevin's Favorite recipe: " />
@@ -60,31 +76,16 @@
       </div>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+  {{!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
-  </button>
+  </button> --}}
 </div>
-<div class="container justify-content-center">
-  <h1 class="text-center about">Let's Get Cooking!</h1>
-  <p class="text-center">Below you can search for recipes by ingredients you
-    have in your kitchen. Or for a spicific dish you have in mind that you would
-    like to try and cook.
-  </p>
-</div>
-<div class="input-group mb-3">
-  <input type="text" class="form-control" placeholder="Search by Ingredient List" aria-label="Ingredient List"
-    aria-describedby="button-addon2" />
-  <button class="btn btn-outline-success me-2" type="button" id="button-addon2">Get Cooking</button>
-</div>
-<div class="input-group mb-3">
-  <input type="text" class="form-control" placeholder="Search For Recipe" aria-label="Search For Recipe"
-    aria-describedby="button-addon2" />
-  <button class="btn btn-outline-success me-2" type="button" id="button-addon2">Get Cooking</button>
-</div>
+<script src="/js/logout.js"></script> 
+</script>
 <script src="https://kit.fontawesome.com/bf2e3f60e1.js" crossorigin="anonymous">
 </script>
