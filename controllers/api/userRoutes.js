@@ -14,7 +14,6 @@ router.post('/login', async (req, res) => {
             return;
         }
 
-
         const validPassword = await userData.checkPassword(req.body.password);
 
         if (!validPassword) {
@@ -24,13 +23,7 @@ router.post('/login', async (req, res) => {
                 .json({ message: 'Incorrect password, please try again' });
             return;
         }
-
-        req.session.save(() => {
-            req.session.user_id = userData.id;
-            req.session.logged_in = true;
-
-            res.json({ user: userData, message: 'You are now logged in!' });
-        });
+        res.render('home')
 
     } catch (err) {
         console.log(err);
@@ -38,7 +31,7 @@ router.post('/login', async (req, res) => {
     }
 });
 
-router.post('/register', async (req, res) => {
+router.post('/registerUser', async (req, res) => {
     try {
         console.log("I want to work")
         const userData = await User.create(req.body);
