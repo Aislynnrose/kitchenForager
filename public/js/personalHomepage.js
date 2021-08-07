@@ -4,7 +4,7 @@ const ingredients_text = document.querySelector('textarea[name="user_text"]').va
 async function newFormHandler(event) {
     event.preventDefault();
 
-    const response = await fetch(`/api/favoriteRoutes`, {
+    const response = await fetch(`/api/userFavoriteRoutes/ingredient`, {
       method: 'GET',
       body: JSON.stringify({
         ingredients_text,

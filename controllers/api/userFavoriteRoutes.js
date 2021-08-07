@@ -1,26 +1,18 @@
 const router = require('express').Router();
-// const spoonacular = require('https://api.spoonacular.com/recipes/complexSearch')
-const Dish = require('../../public/js/userFavorites');
-const Fetch = require('node-fetch');
+const apiKey = process.env.API_KEY
+require("dotenv").config();
+let byIngredient = (`https://api.spoonacular.com/recipes/findByIngredients?ingredients=apples,+flour,+sugar&number=2&apiKey=${apiKey}`)
+let byRecipe = (`https://api.spoonacular.com/recipes/complexSearch&apiKey=${apiKey}`)
+const axios = require('axios')
 
-// route to create/add a dish using async/await
-router.get('/', async (req, res) => {
-  console.log({...req.body});//should log an object that is exactlly the same as below
-  
-  try { 
-    const recipeReturned = await Dish({
-      query: req.body.query,
-      cuisine: req.body.cuisine,
-      // diet: req.body.diet,
-      // intolerance: req.body.intolerance,
-      includeIngredients: req.body.includeIngredients,
-      instructionsRequired: req.body.instructionsRequired,
-    });
-  // if the dish is successfully created, the new response will be returned as json
-    res.status(200).json(recipeReturned)
-} catch (err) {
-  res.status(400).json(err);
-}
+router.get('/ingredient', async function getByIngredient() {
+  try {
+    const response = await axios.get(byIngredient);
+    console.log(byIngredient);
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 
