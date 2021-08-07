@@ -29,12 +29,20 @@ router.get('/register', (req, res) => {
 });
 
 router.get('/personalHomepage', withAuth, async (req, res) => {
-    try {
+ /*    
+    if (req.session.logged_in) {
+        res.redirect('/personalHomepage');
+        return;
+    } */
+
+    res.render('personalHomepage');
+    
+    /* try {
         const userData = await User.findAll({
             attributes: { exclude: ['password'] },
-            order: [['name', 'ASC']],
+            order: [['firstName', 'lastName', 'ASC']],
         });
-
+        console.log(userData);
         const users = userData.map((project) => project.get({ plain: true }));
 
         res.render('personalHomepage', {
@@ -44,7 +52,7 @@ router.get('/personalHomepage', withAuth, async (req, res) => {
         });
     } catch (err) {
         res.status(500).json(err);
-    }
+    } */
 });
 
 module.exports = router;
