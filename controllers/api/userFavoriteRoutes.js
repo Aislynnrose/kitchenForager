@@ -1,10 +1,10 @@
-const router = require('express').Router();
-const apiKey = process.env.API_KEY
+const router = require("express").Router();
 require("dotenv").config();
-let byIngredient = (`https://api.spoonacular.com/recipes/findByIngredients?ingredients=apples,+flour,+sugar&number=2&apiKey=${apiKey}`)
-const axios = require('axios')
+const apiKey = process.env.API_KEY;
+let byIngredient = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=apples,+flour,+sugar&number=2&apiKey=${apiKey}`;
+const axios = require("axios");
 
-router.get('/ingredient', async function getByIngredient() {
+router.get("/ingredient", async function getByIngredient() {
   try {
     const response = await axios.get(byIngredient);
     console.log(byIngredient);
@@ -13,6 +13,5 @@ router.get('/ingredient', async function getByIngredient() {
     console.error(error);
   }
 });
-
 
 module.exports = router;
