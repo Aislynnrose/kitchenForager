@@ -12,7 +12,11 @@
         </p>
     </div>
     <div class="d-flex container-fluid justify-content-center bg-light m-4">
-        <div class="card m-4 p-4" style="width: 18rem;">
+        {{#each devsfavorites}}
+            {{> developer-fav-details}}
+        {{/each}}
+        
+        {{!-- <div class="card m-4 p-4" style="width: 18rem;">
             <img src="..." class="card-img-top" alt="Kevin's Favorite recipe: ">
             <div class="card-body crimsonFont">
                 <h5 class="card-title">Kevin's Favorite</h5>
@@ -51,7 +55,7 @@
                 <p class="card-text">Name of dish.</p>
                 <a href="#" id='favoriteV' class="btn btn-primary">Link to Recipe</a>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 <script src="/js/homepage.js"></script>

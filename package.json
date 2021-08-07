@@ -29,6 +29,8 @@
     "express-session": "^1.17.2",
     "jest": "^27.0.6",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.6.5"
+    "validator": "^13.6.0"
+    "node-fetch": "^2.6.1",
+    "sequelize": "^6.6.5",
   }
 }

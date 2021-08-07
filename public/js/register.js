@@ -7,7 +7,7 @@ const registerFormHandler = async (event) => {
   const password = document.getElementById('passwordLogin').value.trim();
   
   console.log(first_name, last_name, email, password);
-  if (firstName && lastName && email && password) {
+  if (first_name && last_name && email && password) {
       const response = await fetch('/api/users/register', {
           method: 'POST',
           body: JSON.stringify({ first_name, last_name, email, password }),

@@ -28,9 +28,9 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,
-            validate: {
+            /* validate: {
                 isEmail: true,
-            },
+            }, */
         },
         password: {
             type: DataTypes.STRING,
@@ -46,8 +46,7 @@ User.init(
                 try {
                     const salt = await bcrypt.genSalt(10);
                     newUserData.password = await bcrypt.hash(newUserData.password, salt);
-                    newUserData.email = await newUserData.email.toLowerCase();
-                    return newUserData;
+                    return await newUserData.email.toLowerCase();
                 } catch (err) {
                     ; return err;
                 }
