@@ -7,17 +7,17 @@ router.post('/login', async (req, res) => {
 
         if (!userData) {
             res
-                .status(400)
-                .json({ message: 'Incorrect email or password, please try again' });
+                .status(400)                
+                .json({ message: 'Incorrect email , please try again' });
             return;
         }
 
-        const validPassword = await userData.checkPassword(req.body.password);
+        const validPassword = /* req.body.password */ await userData.checkPassword(req.body.password);
 
         if (!validPassword) {
             res
                 .status(400)
-                .json({ message: 'Incorrect email or password, please try again' });
+                .json({ message: 'Incorrect password, please try again' });
             return;
         }
 
@@ -28,6 +28,16 @@ router.post('/login', async (req, res) => {
             res.json({ user: userData, message: 'You are now logged in!' });
         });
 
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
+router.post('/register', async (req, res) => {
+    try {
+        const userData = await User.create(req.body);
+        res.status(200).json(userData);
+        console.log(userData)
     } catch (err) {
         res.status(400).json(err);
     }
