@@ -1,6 +1,3 @@
-const homeBtn = document.querySelector('.homeBtn')
-const loginBtn = document.querySelector('.loginBtn');
-
 const registerFormHandler = async (event) => {
   event.preventDefault();
 
