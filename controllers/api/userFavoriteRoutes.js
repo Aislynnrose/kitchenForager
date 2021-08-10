@@ -29,7 +29,7 @@ router.get("/personalHomepage", async function newFormHandler(event) {
   if (response.ok) {
     document.location.replace("/");
   } else {
-    alert("Failed to add dish");
+    alert('Failed to add dish');
   }
 });
 
