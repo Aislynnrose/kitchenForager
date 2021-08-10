@@ -9,6 +9,11 @@
     font-size: 20px
 }
 
+#cardRecipe {
+    display: none;
+    justify-content: center;
+}
+
 
 @media screen and (max-width: 768px) {
 #adminrecipes {
