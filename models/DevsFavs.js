@@ -15,6 +15,10 @@ DevsFavs.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        image: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         food_name: {
             type: DataTypes.STRING,
             allowNull: false,
