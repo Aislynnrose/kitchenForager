@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const apiKey = process.env.API_KEY
 require("dotenv").config();
+const apiKey = process.env.API_KEY
 let byIngredient = (`https://api.spoonacular.com/recipes/findByIngredients?ingredients=apples,+flour,+sugar&number=2&apiKey=${apiKey}`)
 const axios = require('axios')
 
