@@ -1,8 +1,9 @@
 const addBtn = document.querySelector(".addBtn");
+const searched = document.getElementById("ingredientsSearched");
 const input = document.querySelector("input");
 input.addEventListener("change", updateValue);
 let searchIngredients = [];
-let ingredients = "";
+let ingredients = searchIngredients.join();
 let ingredient = "";
 function updateValue(e) {
   ingredient = e.target.value.toLowerCase();
@@ -13,19 +14,22 @@ function updateValue(e) {
 // });
 
 function addIngredients(ingredient) {
-  console.log(ingredient);
+  // console.log(ingredient);
   searchIngredients.push(ingredient);
-  console.log(searchIngredients);
+  console.log(ingredients);
+  // console.log(searchIngredients);
 }
+
 // const myArray = ["kale", "cheese", "onions"];
 function embedElements() {
-  searchIngredients.forEach((ele) => {
-    document.getElementById(
-      "ingredientsSearched"
-    ).innerHTML += `<p>${ele}</p><br />`;
-    // here result is the id of the div present in the dom
+  searched.innerHTML = "";
+  searchIngredients.forEach((item) => {
+    let li = document.createElement("li");
+    li.innerText = item;
+    searched.appendChild(li);
   });
 }
+
 addBtn.addEventListener("click", async function (event) {
   event.preventDefault();
   $(input).val("");
