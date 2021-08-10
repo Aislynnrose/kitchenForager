@@ -26,6 +26,7 @@ router.get('/personalHomepage', async function newFormHandler(event) {
     document.location.replace('/');
   } else {
     alert('Failed to add dish');
+
   }
 });
 
