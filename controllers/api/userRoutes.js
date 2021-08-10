@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const validator = require("validator");
 const { User } = require("../../models");
 
 router.post("/login", async (req, res) => {
@@ -8,6 +7,7 @@ router.post("/login", async (req, res) => {
 
     console.log(userData);
     if (!userData) {
+      console.log("Hi")
       res
         .status(400)
         .json({ message: "Incorrect email or password, please try again" });
@@ -17,12 +17,20 @@ router.post("/login", async (req, res) => {
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
+      
       res
         .status(400)
         .json({ message: "Incorrect email or password, please try again" });
       return;
     }
-    res.render("home");
+    
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      res.json({ user: userData, message: 'You are now logged in!' });
+  });
+
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
