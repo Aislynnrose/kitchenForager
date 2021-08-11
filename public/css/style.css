@@ -1,24 +1,27 @@
 .about {
-    font-family: 'Permanent Marker';
-    font-size: 50px;
-    color: rgb(2, 39, 202);
+  font-family: "Permanent Marker";
+  font-size: 50px;
+  color: rgb(2, 39, 202);
 }
 
 .crimsonFont {
-    font-family: 'Crimson Text', serif;
-    font-size: 20px
+  font-family: "Crimson Text", serif;
+  font-size: 20px;
 }
 
 #cardRecipe {
-    /* display: none; */
-    justify-content: center;
+  /* display: none; */
+  justify-content: center;
+}
+
+li {
+  list-style-type: none;
 }
 
 @media screen and (max-width: 768px) {
-#adminrecipes {
-    width: 33%!important;
-}
+  #adminrecipes {
+    width: 33% !important;
+  }
 }
 @media screen and (max-width: 320px) {
-
 }
