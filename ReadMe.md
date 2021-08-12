@@ -3,6 +3,7 @@
   
 #### Table of Contents
 * [Project Description](#project-description)
+* [Contributors](#contributors)
 * [Installation Instructions](#installation-instructions)
 * [Usage Information](#usage-information)
 * [Contributor Guidelines](#contributor-guidelines)
