@@ -85,9 +85,11 @@ const searcByIngredientsHandler = async (e) => {
 
     const recipeData = await response.json();
 
-    console.log(recipeData);
+    // console.log(recipeData);
     document.querySelector(".card-title").innerHTML = recipeData.title;
-    document.querySelector(".card-img-top").src = `${recipeData.image}`;
+    document.querySelector(".figure-img").src = `${recipeData.image}`;
     document.querySelector(".recipeLink").href = `${recipeData.sourceUrl}`;
   }
+  searched.innerHTML = "";
+  searchIngredients = [];
 };

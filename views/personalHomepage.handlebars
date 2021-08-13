@@ -12,9 +12,9 @@
 </div>
 <div class="container justify-content-center">
   <h1 class="text-center about">Let's Get Cooking!</h1>
-  <p class="text-center">Below you can search for recipes by ingredients that you
-    have in your kitchen. Or for a spicific dish you have in mind that you would
-    like to try and cook.
+  <p class="text-center">Below you can search for recipes by ingredients that
+    you have in your kitchen. Or for a spicific dish you have in mind that you
+    would like to try and cook.
   </p>
 </div>
 <div class="input-group mb-3">
@@ -48,15 +48,24 @@
   >Get Cooking</button>
 </div>
 
-<div id="cardRecipe" class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 id="recipeName" class="card-title" placeholder="card title"></h5>
-    <a href="#" class="btn btn-primary recipeLink">Recipe Link</a>
-    <button id="favoriteBtn" class="btn btn-primary"><i class="fas fa-grin-hearts"></i></button>
+<div class="container">
+  <div id="cardRecipe" class="card">
+    <h2 id="recipeName" class="card-title" placeholder="card title"></h2>
+
+    <figure class="figure">
+      <img src="..." class="figure-img img-fluid rounded" alt="..." />
+    </figure>
+
+    <div class="card-body">
+      <a href="#" class="btn btn-primary recipeLink">Recipe Link</a>
+      <button id="favoriteBtn" class="btn btn-primary"><i
+          class="fas fa-grin-hearts"
+        ></i></button>
+    </div>
   </div>
 </div>
-<div class="container justify-content-center">
+
+<div class="container align-items-center">
   <p class="text-center">Your Favorites:</p>
   <div
     id="carouselExampleCaptions"
@@ -136,7 +145,7 @@
     </div>
   </div>
 
-  {{!-- <button
+  {{! <button
     class="carousel-control-prev"
     type="button"
     data-bs-target="#carouselExampleCaptions"
@@ -157,11 +166,16 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
 
-  </button>
-</div> --}}
+  </button> }}
+</div>
 
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"
+></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="https://kit.fontawesome.com/bf2e3f60e1.js" crossorigin="anonymous"></script>
-
+<script
+  src="https://kit.fontawesome.com/bf2e3f60e1.js"
+  crossorigin="anonymous"
+></script>
