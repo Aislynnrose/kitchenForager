@@ -4,7 +4,7 @@ const apiKey = process.env.API_KEY;
 const axios = require("axios");
 
 router.post("/personalHomepage", async (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   // console.log(res);
   axios
     .get(
@@ -18,9 +18,9 @@ router.post("/personalHomepage", async (req, res) => {
       }
     )
     .then((response) => {
-      console.log("response", response.data);
-      console.log("status", response.status);
-      console.log("id", response.data[0].id);
+      // console.log("response", response.data);
+      // console.log("status", response.status);
+      // console.log("id", response.data[0].id);
       if (response.status === 200) {
         axios
           .get(
@@ -35,6 +35,7 @@ router.post("/personalHomepage", async (req, res) => {
           )
           .then((response) => {
             console.log(response.data);
+            res.json(response.data);
           })
           .catch((err) => {
             console.error(err);
