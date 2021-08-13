@@ -35,5 +35,4 @@ DevsFavs.init(
         modelName: 'devsfavs',
     }
 );
-
 module.exports = DevsFavs;

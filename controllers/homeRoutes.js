@@ -40,5 +40,6 @@ router.get("/register", (req, res) => {
 router.get("/personalHomepage", withAuth, async (req, res) => {
   res.render("personalHomepage");
 });
+// CREATE multiple books
 
 module.exports = router;

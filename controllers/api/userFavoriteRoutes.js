@@ -4,7 +4,7 @@ const apiKey = process.env.API_KEY;
 const axios = require("axios");
 
 router.post("/personalHomepage", async (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   // console.log(res);
   axios
     .get(
@@ -18,9 +18,29 @@ router.post("/personalHomepage", async (req, res) => {
       }
     )
     .then((response) => {
-      console.log("response", response.data);
-      if (response.ok) {
-        document.location.replace("/personalHomepage");
+      // console.log("response", response.data);
+      // console.log("status", response.status);
+      // console.log("id", response.data[0].id);
+      if (response.status === 200) {
+        axios
+          .get(
+            `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${response.data[0].id}/information`,
+            {
+              headers: {
+                "x-rapidapi-key": apiKey,
+                "x-rapidapi-host":
+                  "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+              },
+            }
+          )
+          .then((response) => {
+            console.log(response.data);
+            res.json(response.data);
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+        // router.render("/personalHomepage");
       } else {
         console.log("Failed to add dish");
       }
