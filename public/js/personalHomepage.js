@@ -19,11 +19,14 @@ function addIngredients(ingredient) {
 // const myArray = ["kale", "cheese", "onions"];
 function embedElements() {
   searched.innerHTML = "";
+  let foragedHeader = document.createElement("h5");
+  foragedHeader.classList.add("text-center", "foragedTitle");
+  foragedHeader.innerText = "Ingredients Forged:";
   let submitBtn = document.createElement("button");
   submitBtn.classList.add("btn", "btn-info", "submitBtn");
   submitBtn.innerText = "Search by ingredients";
   submitBtn.addEventListener("click", searcByIngredientsHandler);
-
+  searched.appendChild(foragedHeader);
   searchIngredients.forEach((item) => {
     let li = document.createElement("li");
     li.setAttribute("class", "listItem");
@@ -40,6 +43,7 @@ function embedElements() {
 
     li.innerText = item;
     li.append(delSym);
+
     searched.appendChild(li);
     searched.appendChild(submitBtn);
   });
@@ -92,6 +96,7 @@ const searcByIngredientsHandler = async (e) => {
     document.querySelector(".figure-img").src = recipeData.image;
     document.querySelector(".recipeLink").href = recipeData.sourceUrl;
     $("#cardRecipe").show();
+    $("#spacerDiv").show();
   }
   searched.innerHTML = "";
   searchIngredients = [];
