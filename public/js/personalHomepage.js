@@ -96,14 +96,12 @@ const searcByIngredientsHandler = async (e) => {
   searchIngredients = [];
 };
 
-const createFavorites = async (e) => {
-  e.stopPropagation();
-
-  const searchresults = searchIngredients.join();
-  if (searchresults) {
+const createFavorites = async () => {
+  const searchResults = searched.join();
+  if (searchResults) {
     const response = await fetch('/api/userFavoriteRoutes/addFavorites', {
     method: "POST",
-    body: JSON.stringify({ searchresults }),
+    body: JSON.stringify({ searchResults }),
     headers: { "Content-Type": "application/json" },
   });
 
@@ -111,8 +109,7 @@ const createFavorites = async (e) => {
   document.querySelector(".card-title").innerHTML = recipeData.title;
   document.querySelector(".card-image").src = `${recipeData.image}`;
   document.querySelector("#recipeLink").href = `${recipeData.sourceUrl}`;
-  console.log(createFavorites);
-  
 }
+console.log(createFavorites);
 favoriteBtn.addEventListener("click", createFavorites);
 };
