@@ -12,46 +12,25 @@
         </p>
     </div>
     <div class="d-flex container-fluid justify-content-center bg-light m-4">
-        <div class="card m-4 p-4" style="width: 18rem;">
-    <div class="card-body crimsonFont">
-      <h5 class="card-title">Kevin's</h5>
-      <p class="card-text">Crab and Shrimp Burgers</p>
-      <image class="card-image" src="https://spoonacular.com/recipeImages/640266-556x370.jpg"></image>
-      <a href="https://www.foodista.com/recipe/KG7C6P3L/crab-and-shrimp-burgers-with-garlic-grits-fries" id='favoriteK' class="btn btn-primary">Recipe Link</a>
-    </div>
-</div>
-<div class="card m-4 p-4" style="width: 18rem;">
-    <div class="card-body crimsonFont">
-      <h5 class="card-title">James's</h5>
-      <p class="card-text">BBQ Mac and Cheese</p>
-      <image class="card-image" src= "https://spoonacular.com/recipeImages/634496-556x370.jpg"></image>
-      <a href="https://www.foodista.com/recipe/FNMKDX42/bbq-mac-and-cheese" id='favoriteK' class="btn btn-primary">Recipe Link</a>
-    </div>
-</div>
-<div class="card m-4 p-4" style="width: 18rem;">
-    <div class="card-body crimsonFont">
-      <h5 class="card-title">Vanessa's</h5>
-      <p class="card-text">Black Bean Feijoada</p>
-      <image class="card-image" src="https://spoonacular.com/recipeImages/635066-556x370.jpg"></image>
-      <a href="http://www.foodista.com/recipe/S5XVHW6X/black-bean-feijoada" id='favoriteK' class="btn btn-primary">Recipe Link</a>
-    </div>
-</div>
-<div class="card m-4 p-4" style="width: 18rem;">
-    <div class="card-body crimsonFont">
-      <h5 class="card-title">Landon's</h5>
-      <p class="card-text">Coconut Lime Shrimp</p>
-      <image class="card-image" src="https://spoonacular.com/recipeImages/1096264-556x370.jpg"></image>
-      <a href="https://www.foodista.com/recipe/Y4N2B5Y4/aip-coconut-lime-shrimp-recipe" id='favoriteK' class="btn btn-primary">Recipe Link</a>
-    </div>
-</div>
-<div class="card m-4 p-4" style="width: 18rem;">
-    <div class="card-body crimsonFont">
-      <h5 class="card-title">Aislynn's</h5>
-      <p class="card-text">Pulled Pork Sandwich with Mango BBQ sauce</p>
-      <image class="card-image" src="https://spoonacular.com/recipeImages/657226-556x370.jpg"></image>
-      <a href="http://www.foodista.com/recipe/TV32HN3D/pulled-pork-sandwich-with-mango-bbq-sauce" id='favoriteK' class="btn btn-primary">Recipe Link</a>
-    </div>
-</div>
-    </div>
-</div>
+
+<div class="container-fluid mt-2">
+  <h2 class="text-center">Developer's Favorite Dishes</h2>
+  <div class="mx-auto row row-cols-auto">
+    {{#each devsfavorites}}
+      <div class="card col mx-auto my-2">
+        <div class="card-body crimsonFont">
+          <h5 class="card-title">{{name}}</h5>
+          <p class="card-text">{{food_name}}</p>
+          <image
+            class="card-image img-fluid rounded mx-auto d-bloc"
+            src={{image}}
+          />
+          <a href={{summary}} id="recipeLink" class="btn btn-primary">Recipe
+            Link</a>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>     
+
 <script src="/js/homepage.js"></script>
