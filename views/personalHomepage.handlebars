@@ -34,10 +34,10 @@
     >Add ingredients</button>
   </div>
 
-  <div id="ingredientsSearched" class="col align-items-center"></div>
+  <div id="ingredientsSearched" class="col text-center"></div>
 </div>
 
-<div id="cardRecipe" class="container">
+<div id="cardRecipe" class="container my-5 border-bottom-1">
   <div class="card">
     <h2 id="recipeName" class="card-title" placeholder="card title"></h2>
 
@@ -54,13 +54,11 @@
   </div>
 </div>
 
-<div class="mx-auto" style="height: 80px;">
-</div>
-
-<div class="container">
-  <div class="row row-cols-auto">
+<div class="container-fluid">
+  <h2 class="text-center">Developer's Favorite Dishes</h2>
+  <div class="mx-auto row row-cols-auto">
     {{#each recipeData}}
-      <div class="card col">
+      <div class="card col mx-auto my-2">
         <div class="card-body crimsonFont">
           <h5 class="card-title">{{id}}</h5>
           <p class="card-text">{{title}}</p>

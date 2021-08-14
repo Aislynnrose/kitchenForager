@@ -51,7 +51,7 @@ router.post("/personalHomepage", async (req, res) => {
     });
 });
 
-router.get('/:id', (req, res) => {
+router.get("/:id", (req, res) => {
   User.findOne({
     where: {
       id: req.params.id,
@@ -59,23 +59,23 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Recipes,
-        attribute: ['id', 'title', 'image']
+        attribute: ["id", "title", "image"],
       },
-    ]
+    ],
   })
-  .then(userRecipes => {
-    if (!userRecipes) {
-      res.status(400).json({ message: 'No recipes found'});
-      return;
-    }
-    res.json(userRecipes);
-  })
-  .catch(err => {
-    res.status(500).json(err);
-  });
+    .then((userRecipes) => {
+      if (!userRecipes) {
+        res.status(400).json({ message: "No recipes found" });
+        return;
+      }
+      res.json(userRecipes);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
 });
 
-router.post('/addFavorites', (req, res) => {
+router.post("/addFavorites", (req, res) => {
   Recipes.create({
     id: req.body.id,
     title: req.body.title,

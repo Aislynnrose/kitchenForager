@@ -102,23 +102,6 @@ const createFavorites = async (e) => {
 
   const searchresults = searchIngredients.join();
   if (searchresults) {
-<<<<<<< Updated upstream
-    const response = await fetch('/api/userFavoriteRoutes/', {
-    method: "POST",
-    body: JSON.stringify({ searchResults }),
-    headers: { "Content-Type": "application/json" },
-  });
-
-  const recipeData = await response.json();
-  document.querySelector(".card-title").innerHTML = recipeData.title;
-  document.querySelector(".card-image").src = `${recipeData.image}`;
-  document.querySelector("#recipeLink").href = `${recipeData.sourceUrl}`;
-}
-console.log(createFavorites);
-favoriteBtn.addEventListener("click", createFavorites);
-};
-
-=======
     const response = await fetch("/api/userFavoriteRoutes/", {
       method: "POST",
       body: JSON.stringify({ searchresults }),
@@ -133,4 +116,3 @@ favoriteBtn.addEventListener("click", createFavorites);
   }
   favoriteBtn.addEventListener("click", createFavorites);
 };
->>>>>>> Stashed changes
