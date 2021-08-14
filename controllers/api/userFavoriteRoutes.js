@@ -82,8 +82,8 @@ router.post("/addFavorites", (req, res) => {
     image: req.body.image,
   })
     .then((recipe) => {
-      if (req.body.ids.length) {
-        const recipeIdArr = req.body.id.map((ids) => {
+      if (req.body.food_id.length) {
+        const recipeIdArr = req.body.id.map((food_id) => {
           return {
             id: product.id,
           };
