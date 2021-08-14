@@ -54,10 +54,10 @@
   </div>
 </div>
 
-<div class="mx-auto" style="height: 80px;" id="spacerDiv">
+<div class="mx-auto mb-5" style="height: 80px;" id="spacerDiv">
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid mt-2">
   <h2 class="text-center">Your Favorite Dishes</h2>
   <div class="mx-auto row row-cols-auto">
     {{#each userFavorites}}
@@ -75,7 +75,8 @@
     {{/each}}
   </div>
 </div>
-<div class="container-fluid">
+
+<div class="container-fluid mt-2">
   <h2 class="text-center">Developer's Favorite Dishes</h2>
   <div class="mx-auto row row-cols-auto">
     {{#each recipeData}}
@@ -87,7 +88,8 @@
             class="card-image img-fluid rounded mx-auto d-bloc"
             src={{image}}
           />
-          <a href="#" id="recipeLink" class="btn btn-primary">Recipe Link</a>
+          <a href={{summary}} id="recipeLink" class="btn btn-primary">Recipe
+            Link</a>
         </div>
       </div>
     {{/each}}
