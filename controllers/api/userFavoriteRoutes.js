@@ -4,7 +4,7 @@ const apiKey = process.env.API_KEY;
 const axios = require("axios");
 const { User, Recipes } = require("../../models");
 
-router.post("/personalHomepage", async (req, res) => {
+router.post("/searchByIngredients", async (req, res) => {
   // console.log(req.body);
   // console.log(res);
   axios
@@ -78,17 +78,19 @@ router.get("/:id", (req, res) => {
 router.post("/addFavorites", (req, res) => {
   Recipes.create({
     id: req.body.id,
-    title: req.body.title,
-    image: req.body.image,
+    title: req.body.recipeTitle,
+    image: req.body.recipeImg,
+    link: req.body.recipeLink,
   })
-    .then((recipe) => {
+    .then((Recipe) => {
+      console.log(Recipe);
       if (req.body.food_id.length) {
         const recipeIdArr = req.body.id.map((food_id) => {
           return {
             id: product.id,
           };
         });
-        return recipe.bulkCreate(recipeIdArr);
+        return Recipe.bulkCreate(recipeIdArr);
       }
       res.status(200).json(product);
     })

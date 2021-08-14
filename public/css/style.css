@@ -15,10 +15,17 @@
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
-  width: 300px;
-  height: 300px;
+  width: 500px;
+  height: 350px;
 }
 
+#spacerDiv {
+  display: none;
+}
+
+.foragedTitle {
+  text-decoration: underline;
+}
 li {
   list-style-type: none;
 }

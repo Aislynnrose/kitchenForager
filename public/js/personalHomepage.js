@@ -1,6 +1,6 @@
 const addBtn = document.querySelector(".addBtn");
 const delBtn = document.querySelector(".delBtn");
-const favoriteBtn = document.querySelector("#favoriteBtn");
+const favoriteBtn = document.getElementById("favoriteBtn");
 const searched = document.getElementById("ingredientsSearched");
 const input = document.querySelector("input");
 input.addEventListener("change", updateValue);
@@ -19,11 +19,14 @@ function addIngredients(ingredient) {
 // const myArray = ["kale", "cheese", "onions"];
 function embedElements() {
   searched.innerHTML = "";
+  let foragedHeader = document.createElement("h5");
+  foragedHeader.classList.add("text-center", "foragedTitle");
+  foragedHeader.innerText = "Ingredients Foraged:";
   let submitBtn = document.createElement("button");
-  submitBtn.classList.add("btn", "btn-info", "submitBtn");
+  submitBtn.classList.add("btn", "btn-info", "submitBtn", "mt-2");
   submitBtn.innerText = "Search by ingredients";
   submitBtn.addEventListener("click", searcByIngredientsHandler);
-
+  searched.appendChild(foragedHeader);
   searchIngredients.forEach((item) => {
     let li = document.createElement("li");
     li.setAttribute("class", "listItem");
@@ -40,6 +43,7 @@ function embedElements() {
 
     li.innerText = item;
     li.append(delSym);
+
     searched.appendChild(li);
     searched.appendChild(submitBtn);
   });
@@ -62,8 +66,8 @@ const handleIngredientDelete = (e) => {
   embedElements();
 };
 
-addBtn.addEventListener("click", async function (event) {
-  event.preventDefault();
+addBtn.addEventListener("click", async function (e) {
+  e.stopPropagation();
   $(input).val("");
   await addIngredients(ingredient);
   embedElements();
@@ -78,41 +82,45 @@ const searcByIngredientsHandler = async (e) => {
   console.log(searchStr);
 
   if (searchStr) {
-    const response = await fetch("/api/userFavoriteRoutes/personalHomepage", {
-      method: "POST",
-      body: JSON.stringify({ searchStr }),
-      headers: { "Content-Type": "application/json" },
-    });
+    const response = await fetch(
+      "/api/userFavoriteRoutes/searchByIngredients",
+      {
+        method: "POST",
+        body: JSON.stringify({ searchStr }),
+        headers: { "Content-Type": "application/json" },
+      }
+    );
 
     const recipeData = await response.json();
 
     // console.log(recipeData);
 
     document.querySelector(".card-title").innerHTML = recipeData.title;
-    document.querySelector(".figure-img").src = recipeData.image;
+    document.querySelector(".recipeImg").src = recipeData.image;
     document.querySelector(".recipeLink").href = recipeData.sourceUrl;
     $("#cardRecipe").show();
+    $("#spacerDiv").show();
   }
   searched.innerHTML = "";
   searchIngredients = [];
 };
 
-const createFavorites = async (e) => {
+favoriteBtn.addEventListener("click", async (e) => {
   e.stopPropagation();
 
-  const searchresults = searchIngredients.join();
-  if (searchresults) {
-    const response = await fetch("/api/userFavoriteRoutes/", {
+  console.log("hello there");
+
+  let recipeTitle = document.querySelector(".card-title").innerHTML;
+  let recipeImg = document.querySelector(".recipeImg").src;
+  let recipeLink = document.querySelector(".recipeLink").href;
+
+  console.log("data captutred", recipeTitle, recipeImg, recipeLink);
+
+  if (recipeTitle && recipeImg && recipeLink) {
+    const response = await fetch("/api/userFavoriteRoutes/addFavorites", {
       method: "POST",
-      body: JSON.stringify({ searchresults }),
+      body: JSON.stringify({ recipeTitle, recipeImg, recipeLink }),
       headers: { "Content-Type": "application/json" },
     });
-
-    const recipeData = await response.json();
-    document.querySelector(".card-title").innerHTML = recipeData.title;
-    document.querySelector(".card-image").src = `${recipeData.image}`;
-    document.querySelector("#recipeLink").href = `${recipeData.sourceUrl}`;
-    console.log(createFavorites);
   }
-  favoriteBtn.addEventListener("click", createFavorites);
-};
+});
