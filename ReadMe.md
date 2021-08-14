@@ -55,7 +55,7 @@
 
 ## Questions
 * For additional help or questions about collaboration, please reach out to jpodell21@gmail.com
-* Follow us at on Github at 
+* Follow us on Github at 
 * [azwethinkweizkd](https://github.com/azwethinkweizkd)
 * [bonilhav](https://github.com/bonilhav)
 * [Landon0615](https://github.com/Landon0615)
