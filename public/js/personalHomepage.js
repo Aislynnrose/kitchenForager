@@ -87,6 +87,7 @@ const searcByIngredientsHandler = async (e) => {
     const recipeData = await response.json();
 
     // console.log(recipeData);
+
     document.querySelector(".card-title").innerHTML = recipeData.title;
     document.querySelector(".figure-img").src = recipeData.image;
     document.querySelector(".recipeLink").href = recipeData.sourceUrl;
@@ -101,18 +102,17 @@ const createFavorites = async (e) => {
 
   const searchresults = searchIngredients.join();
   if (searchresults) {
-    const response = await fetch('/api/userFavoriteRoutes/', {
-    method: "POST",
-    body: JSON.stringify({ searchResults }),
-    headers: { "Content-Type": "application/json" },
-  });
+    const response = await fetch("/api/userFavoriteRoutes/", {
+      method: "POST",
+      body: JSON.stringify({ searchresults }),
+      headers: { "Content-Type": "application/json" },
+    });
 
-  const recipeData = await response.json();
-  document.querySelector(".card-title").innerHTML = recipeData.title;
-  document.querySelector(".card-image").src = `${recipeData.image}`;
-  document.querySelector("#recipeLink").href = `${recipeData.sourceUrl}`;
-}
-console.log(createFavorites);
-favoriteBtn.addEventListener("click", createFavorites);
+    const recipeData = await response.json();
+    document.querySelector(".card-title").innerHTML = recipeData.title;
+    document.querySelector(".card-image").src = `${recipeData.image}`;
+    document.querySelector("#recipeLink").href = `${recipeData.sourceUrl}`;
+    console.log(createFavorites);
+  }
+  favoriteBtn.addEventListener("click", createFavorites);
 };
-
