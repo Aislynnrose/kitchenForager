@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
     );
 
     res.render("homepage", {
-      devsfavorites,
+      recipeData,
     });
   } catch (err) {
     console.log(err);
