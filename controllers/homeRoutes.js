@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, DevsFavs } = require("../models");
+const { User, DevsFavs, Recipes } = require("../models");
 const withAuth = require("../utils/auth");
 const recipeData = require("../seeds/recipes.json"); 
 
@@ -45,9 +45,16 @@ router.get("/personalHomepage", withAuth, async (req, res) => {
     devsfavs.get({ plain: true })
   );
   console.log(recipeData);
+  const dbUserFavsData = await Recipes.findAll({});
+  
+  const userFavorites = dbUserFavsData.map((recipes) =>
+  recipes.get({ plain: true })
+  );
   res.render("personalHomepage", {
-    recipeData,
+    recipeData, userFavorites,
   });
+
+
 });
 
 module.exports = router;
