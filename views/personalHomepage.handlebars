@@ -18,7 +18,7 @@
 </div>
 <div class="container-fluid col-3 ingSearchDiv">
 
-  <div class="input-group mb-3 col-3">
+  <div class="input-group mb-3 col-3 text-center">
     <input
       type="text"
       class="form-control inputIng"
@@ -34,7 +34,7 @@
     >Add ingredients</button>
   </div>
 
-  <div id="ingredientsSearched" class="col text-center"></div>
+  <div id="ingredientsSearched" class="col text-center mb-5"></div>
 </div>
 
 <div id="cardRecipe" class="container mb-5">
@@ -42,7 +42,7 @@
     <h2 id="recipeName" class="card-title" placeholder="card title"></h2>
 
     <figure class="figure">
-      <img src="..." class="figure-img img-fluid rounded" alt="..." />
+      <img src="..." class="figure-img img-fluid rounded recipeImg" alt="..." />
     </figure>
 
     <div class="card-body">
@@ -65,7 +65,10 @@
         <div class="card-body crimsonFont">
           <h5 class="card-title">{{id}}</h5>
           <p class="card-text">{{title}}</p>
-          <image class="card-image" src={{image}} />
+          <image
+            class="card-image img-fluid rounded mx-auto d-bloc"
+            src={{image}}
+          />
           <a href="#" id="recipeLink" class="btn btn-primary">Recipe Link</a>
         </div>
       </div>
