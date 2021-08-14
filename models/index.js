@@ -14,4 +14,4 @@ Food.hasMany(Ingredients, {
 });
 
 
-module.exports = { User, Food, Ingredients, DevsFavs };
+module.exports = { User, Food, Ingredients, DevsFavs, Recipes };

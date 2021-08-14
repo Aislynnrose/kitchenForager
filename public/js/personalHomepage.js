@@ -1,5 +1,6 @@
 const addBtn = document.querySelector(".addBtn");
 const delBtn = document.querySelector(".delBtn");
+const favoriteBtn = document.querySelector("#favoriteBtn");
 const searched = document.getElementById("ingredientsSearched");
 const input = document.querySelector("input");
 input.addEventListener("change", updateValue);
@@ -99,7 +100,6 @@ const createFavorites = async (e) => {
 
   const searchresults = searchIngredients.join();
   if (searchresults) {
-
     const response = await fetch('/api/userFavoriteRoutes/', {
     method: "POST",
     body: JSON.stringify({ searchresults }),
@@ -108,6 +108,14 @@ const createFavorites = async (e) => {
 
   const recipeData = await response.json();
   document.querySelector(".card-title").innerHTML = recipeData.title;
+  document.querySelector(".card-image").src = `${recipeData.image}`;
+  document.querySelector("#recipeLink").href = `${recipeData.sourceUrl}`;
+  console.log(createFavorites);
+  
+}
+favoriteBtn.addEventListener("click", createFavorites);
+};
   document.querySelector(".figure-img").src = `${recipeData.image}`;
   document.querySelector(".recipeLink").href = `${recipeData.sourceUrl}`;
 }};
+

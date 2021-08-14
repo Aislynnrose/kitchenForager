@@ -13,8 +13,7 @@
 <div class="container justify-content-center">
   <h1 class="text-center about">Let's Get Cooking!</h1>
   <p class="text-center">Below you can search for recipes by ingredients that
-    you have in your kitchen. Or for a specific dish you have in mind that you
-    would like to try and cook.
+    you have in your kitchen. 
   </p>
 </div>
 <div class="input-group mb-3">
@@ -33,20 +32,6 @@
   >Add ingredients</button>
 </div>
 <div id="ingredientsSearched"></div>
-<div class="input-group mb-3">
-  <input
-    type="text"
-    class="form-control inputRec"
-    placeholder="Search For Recipe"
-    aria-label="Search For Recipe"
-    aria-describedby="button-addon2"
-  />
-  <button
-    class="btn btn-outline-success me-2 recBtn"
-    type="button"
-    id="recBtn"
-  >Get Cooking</button>
-</div>
 
 <div id="cardRecipe" class="container">
   <div class="card">
@@ -74,7 +59,7 @@
       <h5 class="card-title">{{id}}</h5>
       <p class="card-text">{{title}}</p>
       <image class="card-image" src={{image}}></image>
-      <a href={{summary}} id='favoriteK' class="btn btn-primary">Recipe Link</a>
+      <a href='#' id='recipeLink' class="btn btn-primary">Recipe Link</a>
     </div>
 </div>
 {{/each}}
