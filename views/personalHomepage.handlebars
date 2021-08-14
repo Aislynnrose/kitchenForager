@@ -58,6 +58,24 @@
 </div>
 
 <div class="container-fluid">
+  <h2 class="text-center">Your Favorite Dishes</h2>
+  <div class="mx-auto row row-cols-auto">
+    {{#each userFavorites}}
+      <div class="card col mx-auto my-2">
+        <div class="card-body crimsonFont">
+          <h5 class="card-title">{{id}}</h5>
+          <p class="card-text">{{title}}</p>
+          <image
+            class="card-image img-fluid rounded mx-auto d-bloc"
+            src={{image}}
+          />
+          <a href="#" id="recipeLink" class="btn btn-primary">Recipe Link</a>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
+<div class="container-fluid">
   <h2 class="text-center">Developer's Favorite Dishes</h2>
   <div class="mx-auto row row-cols-auto">
     {{#each recipeData}}
