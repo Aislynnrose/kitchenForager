@@ -75,7 +75,7 @@ router.get('/:id', (req, res) => {
   });
 });
 
-router.post('/', (req, res) => {
+router.post('/addFavorites', (req, res) => {
   Recipes.create({
     id: req.body.id,
     title: req.body.title,

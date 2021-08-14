@@ -90,6 +90,7 @@ const searcByIngredientsHandler = async (e) => {
     document.querySelector(".card-title").innerHTML = recipeData.title;
     document.querySelector(".figure-img").src = recipeData.image;
     document.querySelector(".recipeLink").href = recipeData.sourceUrl;
+    $("#cardRecipe").show();
   }
   searched.innerHTML = "";
   searchIngredients = [];
@@ -102,7 +103,7 @@ const createFavorites = async (e) => {
   if (searchresults) {
     const response = await fetch('/api/userFavoriteRoutes/', {
     method: "POST",
-    body: JSON.stringify({ searchresults }),
+    body: JSON.stringify({ searchResults }),
     headers: { "Content-Type": "application/json" },
   });
 
@@ -110,12 +111,8 @@ const createFavorites = async (e) => {
   document.querySelector(".card-title").innerHTML = recipeData.title;
   document.querySelector(".card-image").src = `${recipeData.image}`;
   document.querySelector("#recipeLink").href = `${recipeData.sourceUrl}`;
-  console.log(createFavorites);
-  
 }
+console.log(createFavorites);
 favoriteBtn.addEventListener("click", createFavorites);
 };
-  document.querySelector(".figure-img").src = `${recipeData.image}`;
-  document.querySelector(".recipeLink").href = `${recipeData.sourceUrl}`;
-}};
 
