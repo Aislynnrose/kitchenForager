@@ -1,31 +1,31 @@
 [
   {
-    "name": "Kevin",
+    "name": "Kevin's",
     "food_name": "Crab and Shrimp Burgers",
     "image": "https://spoonacular.com/recipeImages/640266-556x370.jpg",
     "description": "https://www.foodista.com/recipe/KG7C6P3L/crab-and-shrimp-burgers-with-garlic-grits-fries"
   },
   {
-    "name": "Landon",
+    "name": "Landon's",
     "food_name": "Coconut Lime Shrimp",
     "image": "https://spoonacular.com/recipeImages/1096264-556x370.jpg",
     "description": "https://www.foodista.com/recipe/Y4N2B5Y4/aip-coconut-lime-shrimp-recipe"
   },
   {
-    "name": "James",
+    "name": "James'",
     "food_name": "BBQ Mac and Cheese",
     "image": "https://spoonacular.com/recipeImages/634496-556x370.jpg",
     "description": "https://www.foodista.com/recipe/FNMKDX42/bbq-mac-and-cheese"
   },
   {
-    "name": "Vanessa",
+    "name": "Vanessa's",
     "food_name": "Black Bean Feijoada",
     "image": "https://spoonacular.com/recipeImages/635066-556x370.jpg",
     "description": "http://www.foodista.com/recipe/S5XVHW6X/black-bean-feijoada"
   },
   {
-    "name": "Aislynn",
-    "food_name": "Pulled Pork Sandwich with Mango BBQ sauce",
+    "name": "Aislynn's",
+    "food_name": "Pulled Pork Sandwich",
     "image":"https://spoonacular.com/recipeImages/657226-556x370.jpg",
     "description": "http://www.foodista.com/recipe/TV32HN3D/pulled-pork-sandwich-with-mango-bbq-sauce"
   }

@@ -10,8 +10,13 @@
 }
 
 #cardRecipe {
-  /* display: none; */
+  display: none;
   justify-content: center;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
 }
 
 li {

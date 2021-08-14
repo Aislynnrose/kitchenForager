@@ -1,0 +1,32 @@
+[
+    {
+      "id": "Kevin's",
+      "title": "Crab and Shrimp Burgers",
+      "image": "https://spoonacular.com/recipeImages/640266-556x370.jpg",
+      "summary": "https://www.foodista.com/recipe/KG7C6P3L/crab-and-shrimp-burgers-with-garlic-grits-fries"
+    },
+    {
+      "id": "Landon's",
+      "title": "Coconut Lime Shrimp",
+      "image": "https://spoonacular.com/recipeImages/1096264-556x370.jpg",
+      "summary": "https://www.foodista.com/recipe/Y4N2B5Y4/aip-coconut-lime-shrimp-recipe"
+    },
+    {
+      "id": "James'",
+      "title": "BBQ Mac and Cheese",
+      "image": "https://spoonacular.com/recipeImages/634496-556x370.jpg",
+      "summary": "https://www.foodista.com/recipe/FNMKDX42/bbq-mac-and-cheese"
+    },
+    {
+      "id": "Vanessa's",
+      "title": "Black Bean Feijoada",
+      "image": "https://spoonacular.com/recipeImages/635066-556x370.jpg",
+      "summary": "http://www.foodista.com/recipe/S5XVHW6X/black-bean-feijoada"
+    },
+    {
+      "id": "Aislynn's",
+      "title": "Pulled Pork Sandwich",
+      "image":"https://spoonacular.com/recipeImages/657226-556x370.jpg",
+      "summary": "http://www.foodista.com/recipe/TV32HN3D/pulled-pork-sandwich-with-mango-bbq-sauce"
+    }
+  ]

@@ -14,7 +14,7 @@
 * [Deployment Image](#deployment-image)
 
 ## Project Description
-* Ever wonder what you can make with the food you have at home without going to the store? Well, have we got an app for you!! with the Kitchen Forager app you can input available ingredients from your home to see what recipes are out there. If you find recipes you like you can save them for future use. We want to help you save money and cook from home!
+* Ever wonder what you can make with the food you have at home without going to the store? Well, have we got an app for you!! With the Kitchen Forager app you can input available ingredients from your home to see what recipes are out there. If you find recipes you like you can save them for future use. We want to help you save money and cook from home!
 
 ## Contributors
 * Kevin Devlin
@@ -35,7 +35,7 @@
 * validator
 
 ## Usage Information
-* You need to install the packages above to be able to use this code.
+* You need to install the packages above to be able to run this code.
 
 ## Contributor Guidelines
 * Contribution rules are under the Code of Conduct section
@@ -54,4 +54,6 @@
 * Follow me on Github at [JamesO1231](http://github.com/JamesO1231)
 
 ## Deployment Image
-![Alt text]()
+![Alt text](./images/homePage.PNG)
+![Alt text](./images/loginPage.PNG)
+![Alt text](./images/registrationPage.PNG)
