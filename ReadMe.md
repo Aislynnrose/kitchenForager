@@ -8,8 +8,9 @@
 * [Usage Information](#usage-information)
 * [Contributor Guidelines](#contributor-guidelines)
 * [Code of Conduct](#code-of-conduct)
-* [License](#license)
 * [Test Instructions](#test-instructions)
+* [License](#license)
+* [App Link](#app-link)
 * [Questions](#questions)
 * [Deployment Image](#deployment-image)
 
@@ -49,9 +50,17 @@
 ## License
 * MIT License
 
+## App Link
+* [Kitchen Forager](https://kitchenforager.herokuapp.com/)
+
 ## Questions
 * For additional help or questions about collaboration, please reach out to jpodell21@gmail.com
-* Follow me on Github at [JamesO1231](http://github.com/JamesO1231)
+* Follow us on Github at 
+* [azwethinkweizkd](https://github.com/azwethinkweizkd)
+* [bonilhav](https://github.com/bonilhav)
+* [Landon0615](https://github.com/Landon0615)
+* [JamesO1231](http://github.com/JamesO1231)
+* [Aislynnrose](https://github.com/Aislynnrose)
 
 ## Deployment Image
 ![Alt text](./images/homePage.PNG)
