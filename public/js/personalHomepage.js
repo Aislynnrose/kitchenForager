@@ -87,9 +87,8 @@ const searcByIngredientsHandler = async (e) => {
 
     // console.log(recipeData);
     document.querySelector(".card-title").innerHTML = recipeData.title;
-    document.querySelector(".figure-img").src = `${recipeData.image}`;
-    document.querySelector(".recipeLink").href = `${recipeData.sourceUrl}`;
-    $("#cardRecipe").show();
+    document.querySelector(".figure-img").src = recipeData.image;
+    document.querySelector(".recipeLink").href = recipeData.sourceUrl;
   }
   searched.innerHTML = "";
   searchIngredients = [];
@@ -100,6 +99,6 @@ const createFavorites = async (e) => {
 
   const searchresults = searchIngredients.join();
   if (searchresults) {
-    const response = await fetch('/api/userFavoriteRoutes/')
+    const response = await fetch("/api/userFavoriteRoutes/");
   }
-}
+};
