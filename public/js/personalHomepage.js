@@ -99,6 +99,15 @@ const createFavorites = async (e) => {
 
   const searchresults = searchIngredients.join();
   if (searchresults) {
-    const response = await fetch("/api/userFavoriteRoutes/");
-  }
-};
+
+    const response = await fetch('/api/userFavoriteRoutes/', {
+    method: "POST",
+    body: JSON.stringify({ searchresults }),
+    headers: { "Content-Type": "application/json" },
+  });
+
+  const recipeData = await response.json();
+  document.querySelector(".card-title").innerHTML = recipeData.title;
+  document.querySelector(".figure-img").src = `${recipeData.image}`;
+  document.querySelector(".recipeLink").href = `${recipeData.sourceUrl}`;
+}};
