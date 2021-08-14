@@ -81,20 +81,12 @@ router.post("/addFavorites", (req, res) => {
     title: req.body.recipeTitle,
     image: req.body.recipeImg,
     link: req.body.recipeLink,
+    user_id: req.session.user_id,
   })
-    .then((Recipe) => {
-      console.log(Recipe);
-      if (req.body.food_id.length) {
-        const recipeIdArr = req.body.id.map((food_id) => {
-          return {
-            id: product.id,
-          };
-        });
-        return Recipe.bulkCreate(recipeIdArr);
-      }
-      res.status(200).json(product);
+    .then((recipe) => {
+      console.log(recipe);
+      Recipes.bulkCreate(recipe);
     })
-    .then((recipeId) => res.status(200).json(recipeId))
     .catch((err) => {
       console.log(err);
       res.status(400).json(err);

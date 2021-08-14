@@ -114,7 +114,7 @@ favoriteBtn.addEventListener("click", async (e) => {
   let recipeImg = document.querySelector(".recipeImg").src;
   let recipeLink = document.querySelector(".recipeLink").href;
 
-  console.log("data captutred", recipeTitle, recipeImg, recipeLink);
+  console.log("data captured", recipeTitle, recipeImg, recipeLink);
 
   if (recipeTitle && recipeImg && recipeLink) {
     const response = await fetch("/api/userFavoriteRoutes/addFavorites", {
