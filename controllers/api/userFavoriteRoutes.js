@@ -2,6 +2,7 @@ const router = require("express").Router();
 require("dotenv").config();
 const apiKey = process.env.API_KEY;
 const axios = require("axios");
+const { User, Recipes } = require("../../models");
 
 router.post("/personalHomepage", async (req, res) => {
   // console.log(req.body);
@@ -47,6 +48,54 @@ router.post("/personalHomepage", async (req, res) => {
     })
     .catch((err) => {
       console.error(err);
+    });
+});
+
+router.get('/:id', (req, res) => {
+  User.findOne({
+    where: {
+      id: req.params.id,
+    },
+    include: [
+      {
+        model: Recipes,
+        attribute: ['id', 'title', 'image']
+      },
+    ]
+  })
+  .then(userRecipes => {
+    if (!userRecipes) {
+      res.status(400).json({ message: 'No recipes found'});
+      return;
+    }
+    res.json(userRecipes);
+  })
+  .catch(err => {
+    res.status(500).json(err);
+  });
+});
+
+router.post('/', (req, res) => {
+  Recipes.create({
+    id: req.body.id,
+    title: req.body.title,
+    image: req.body.image,
+  })
+    .then((recipe) => {
+      if (req.body.ids.length) {
+        const recipeIdArr = req.body.id.map((ids) => {
+          return {
+            id: product.id,
+          };
+        });
+        return recipe.bulkCreate(recipeIdArr);
+      }
+      res.status(200).json(product);
+    })
+    .then((recipeId) => res.status(200).json(recipeId))
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json(err);
     });
 });
 

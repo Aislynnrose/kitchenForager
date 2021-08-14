@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { User, DevsFavs } = require("../models");
 const withAuth = require("../utils/auth");
+const recipeData = require("../seeds/recipes.json"); 
 
 router.get("/", async (req, res) => {
   try {
@@ -38,8 +39,15 @@ router.get("/register", (req, res) => {
 });
 
 router.get("/personalHomepage", withAuth, async (req, res) => {
-  res.render("personalHomepage");
+  const dbDevsFavsData = await DevsFavs.findAll({});
+  
+  const devsfavorites = dbDevsFavsData.map((devsfavs) =>
+    devsfavs.get({ plain: true })
+  );
+  console.log(recipeData);
+  res.render("personalHomepage", {
+    recipeData,
+  });
 });
-// CREATE multiple books
 
 module.exports = router;
